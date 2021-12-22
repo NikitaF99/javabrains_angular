@@ -16,6 +16,7 @@ export class BlogPostTileComponent implements OnInit {
 
   @Input()
   post!: BlogPost;
+  fullSummary!: string;
 
   //constructors are used for dependency injection
   constructor(private trucatePipe:TruncatePipe) { }
@@ -23,7 +24,13 @@ export class BlogPostTileComponent implements OnInit {
   ngOnInit(): void {
     //calling the trucate pipe here. Much similar to how services work
     //1.TruncatePipe annd to app.module imports and providers section
+    this.fullSummary = this.post.summary;
     this.post.summary=this.trucatePipe.transform(this.post.summary,30);
+ 
+  }
+
+  showFullSummary(){
+    this.post.summary = this.fullSummary;
   }
 
 }
