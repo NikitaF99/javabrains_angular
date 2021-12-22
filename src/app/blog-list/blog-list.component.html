@@ -2,6 +2,20 @@
 <!-- <app-blog-post-tile [post]="blogPosts[0]"></app-blog-post-tile>  -->
 
 <!-- A better way to print through loop -->
-<app-blog-post-tile 
+<!-- <app-blog-post-tile 
 *ngFor="let post of blogPosts"
-[post]="post"></app-blog-post-tile> 
+[post]="post"></app-blog-post-tile>  -->
+
+
+
+<!-- With Paginator -->
+<app-blog-post-tile 
+*ngFor="let post of blogPosts[currentPage]"
+[post]="post"></app-blog-post-tile>
+
+
+<!-- <app-paginator [numberOfPages ]="blogPosts.length"></app-paginator> -->
+
+<!-- When the event is emitted we are calling the updatePage function -->
+<!-- events must be called within parenthesis -->
+<app-paginator [numberOfPages]="blogPosts.length"  (pageNumberClick)="updatePage($event)"></app-paginator>
