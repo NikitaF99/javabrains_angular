@@ -1,7 +1,9 @@
 <div class="card">
     <div class ="card-body">
         <h5 class="card-title">{{post.title}}</h5>
-            <p class="card-text">{{post.summary}}</p>
+        <!-- pipe is a feature which allows to pass values in your doub le curlies to a funcionction called trunkate -->
+           <!-- post.summary is passed to a function called truncate and returs the funtion retur  -->
+        <p class="card-text">{{post.summary | truncate: [30]}}</p>
             <a htef="#" class="btn btn-primary">Read</a>
        
     </div>
