@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { BlogPost } from '../blog-post';
 import { TruncatePipe } from '../truncate.pipe';
@@ -6,7 +6,10 @@ import { TruncatePipe } from '../truncate.pipe';
 @Component({
   selector: 'app-blog-post-tile', //the html tag name
   templateUrl: './blog-post-tile.component.html',
-  styleUrls: ['./blog-post-tile.component.scss']
+  styleUrls: ['./blog-post-tile.component.scss'],
+  // encapsulation: ViewEncapsulation.None //to remove the feature of angular
+  //wheere scss class names are restricted only to that component
+  //can be used for shared component
 })
 export class BlogPostTileComponent implements OnInit {
 
