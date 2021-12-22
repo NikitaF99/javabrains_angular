@@ -1,4 +1,7 @@
-<app-blog-post-tile title="Input title" summary="This is summary"></app-blog-post-tile>
-<app-blog-post-tile title="Input title" summary="This is summary"></app-blog-post-tile>
-<app-blog-post-tile title="Input title" summary="This is summary"></app-blog-post-tile>
-<app-blog-post-tile title="Input title" summary="This is summary"></app-blog-post-tile>
+<!-- Passing an object of class with variables -->
+<!-- <app-blog-post-tile [post]="blogPosts[0]"></app-blog-post-tile>  -->
+
+<!-- A better way to print through loop -->
+<app-blog-post-tile 
+*ngFor="let post of blogPosts"
+[post]="post"></app-blog-post-tile> 

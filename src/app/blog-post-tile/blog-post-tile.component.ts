@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+import { BlogPost } from '../blog-post';
+
 @Component({
   selector: 'app-blog-post-tile', //the html tag name
   templateUrl: './blog-post-tile.component.html',
@@ -7,9 +9,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class BlogPostTileComponent implements OnInit {
 
- @Input() title: string | undefined; //component input
- @Input() summary: string | undefined;
-  
+//  @Input() title: string | undefined; //component input
+//  @Input() summary: string | undefined;
+  //  @Input() title: string | undefined; //component input
+  //  @Input() summary: string | undefined;
+
+  @Input()
+  post!: BlogPost;
   constructor() { }
 
   ngOnInit(): void {
