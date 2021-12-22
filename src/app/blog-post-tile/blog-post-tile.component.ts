@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { BlogPost } from '../blog-post';
+import { TruncatePipe } from '../truncate.pipe';
 
 @Component({
   selector: 'app-blog-post-tile', //the html tag name
@@ -9,19 +10,20 @@ import { BlogPost } from '../blog-post';
 })
 export class BlogPostTileComponent implements OnInit {
 
-//  @Input() title: string | undefined; //component input
-//  @Input() summary: string | undefined;
+
   //  @Input() title: string | undefined; //component input
   //  @Input() summary: string | undefined;
 
   @Input()
   post!: BlogPost;
-  constructor() { }
+
+  //constructors are used for dependency injection
+  constructor(private trucatePipe:TruncatePipe) { }
 
   ngOnInit(): void {
-    // this.title="Blog title";
-    // this.summary="Blog post summary"
-    //Gonna pass through another componenet
+    //calling the trucate pipe here. Much similar to how services work
+    //1.TruncatePipe annd to app.module imports and providers section
+    this.post.summary=this.trucatePipe.transform(this.post.summary,30);
   }
 
 }
