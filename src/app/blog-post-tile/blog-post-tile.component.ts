@@ -21,6 +21,15 @@ export class BlogPostTileComponent implements OnInit {
   post!: BlogPost;
   fullSummary!: string;
 
+
+  @Input() set showOnPress(value: boolean) {
+    if(value){
+    this.showFullSummary();
+    console.log("triggered");
+    }
+   
+}
+
   //constructors are used for dependency injection
   constructor(private trucatePipe:TruncatePipe) { }
 
