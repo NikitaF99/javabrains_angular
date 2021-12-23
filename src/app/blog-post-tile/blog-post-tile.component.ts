@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { BlogPost } from '../blog-post';
 import { TruncatePipe } from '../truncate.pipe';
@@ -10,6 +10,9 @@ import { TruncatePipe } from '../truncate.pipe';
   // encapsulation: ViewEncapsulation.None //to remove the feature of angular
   //wheere scss class names are restricted only to that component
   //can be used for shared component
+
+//....................................................
+  changeDetection: ChangeDetectionStrategy.OnPush //dont look deep to detec changes but only look the reference
 })
 export class BlogPostTileComponent implements OnInit {
 
