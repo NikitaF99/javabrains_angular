@@ -1,7 +1,8 @@
 <!-- single quotes are added to pass as string -->
 <div class="card" [ngClass]="{'fav': post.isFav}"> 
     <div class ="card-body">
-        <h5 class="card-title">{{post.title}}</h5>
+        <!-- directive can also take inputs -->
+        <h5 class="card-title" appHighlight color="green">{{post.title}}</h5>
         <!-- pipe is a feature which allows to pass values in your doub le curlies to a funcionction called trunkate -->
            <!-- post.summary is passed to a function called truncate and returs the funtion retur  -->
         
