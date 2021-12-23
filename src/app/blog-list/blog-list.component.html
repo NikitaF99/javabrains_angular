@@ -9,9 +9,10 @@
 
 
 <!-- With Paginator -->
-
+<app-card>
 <p><a href="#" (click)="expandAll()">Expand all</a></p>
 <p><a href="#" (click)="favAll()">Favourite All</a></p>
+</app-card>
 <!-- <div *ngFor="let post of blogPosts[currentPage]"> -->
 <app-blog-post-tile 
 [showOnPress] = "show"
@@ -31,3 +32,8 @@
 <!-- When the event is emitted we are calling the updatePage function -->
 <!-- events must be called within parenthesis -->
 <app-paginator [numberOfPages]="blogPosts.length"  (pageNumberClick)="updatePage($event)"></app-paginator>
+
+<app-card>
+    <h1>Heading</h1>
+    <p>Paragrpah</p>
+</app-card>
